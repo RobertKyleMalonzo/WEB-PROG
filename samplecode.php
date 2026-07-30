@@ -103,8 +103,42 @@
     </button>
 
 </form>
+<?php
+   if(isset($_POST["compute"])) {
+    $name = $_POST["name"];
+    $basic = $_POST["basic"];
+    $hours = $_POST["hours"];
+    $rate = $_POST["rate"];
 
+    //COMPUTATION
+    $overtimepay = $hours * $rate;
+    $grosspay = $basic + $overtimepay;
 
+    //CONDITION FOR BONUS
+    if($grosspay >= 50000) {
+       $bonus = 5000;
+    }
+    elseif($grosspay >= 30000) {
+       $bonus = 2500;
+    }
+    else{
+        $bonus = 1000;
+    }
+
+    //CONDITION FOR GETTING THE TAX
+    if($grosspay > 50000){
+        $tax = $grosspay * 0.15;
+    }
+    elseif($grosspay > 30000){
+        $tax = $grosspay * 0.10;
+    }
+    else{
+         $tax = $grosspay * 0.05;
+    }
+
+    //COMPUTATION FOR NETPAY
+    $np = $grosspay + $bonus - $tax;
+?>
 <table>
 
 <tr>
@@ -113,40 +147,45 @@
 
 <tr>
     <td>Employee Name</td>
-    <td>Juan Dela Cruz</td>
+    <td><?php echo $name?></td>
 </tr>
 
 <tr>
     <td>Basic Salary</td>
-    <td>₱40,000.00</td>
+    <td>₱<?php echo number_format($basic,2)?></td>
 </tr>
 
 <tr>
     <td>Overtime Pay</td>
-    <td>₱4,000.00</td>
+    <td>₱<?php echo number_format($overtimepay,2)?></td>
 </tr>
 
 <tr>
     <td>Gross Salary</td>
-    <td>₱44,000.00</td>
+    <td>₱<?php echo number_format($grosspay,2)?></td>
 </tr>
 
 <tr>
     <td>Bonus</td>
-    <td>₱2,500.00</td>
+    <td>₱<?php echo number_format($bonus,2)?></td>
 </tr>
 
 <tr>
     <td>Tax Deduction</td>
-    <td>₱4,400.00</td>
+    <td>₱<?php echo number_format($tax,2)?></td>
 </tr>
 
 <tr>
     <td><strong>Net Salary</strong></td>
-    <td><strong>₱42,100.00</strong></td>
+    <td><strong>₱<?php echo number_format($np,2)?></strong></td>
 </tr>
 
 </table>
+<?php
+   }
+?>
+
+
 
 
 </div>
