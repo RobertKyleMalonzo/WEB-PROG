@@ -36,7 +36,7 @@
 
             <a
                 class="btn btn-outline-light btn-sm"
-                href="../index.html"
+                href="../logout.php"
             >
                 Logout
             </a>
