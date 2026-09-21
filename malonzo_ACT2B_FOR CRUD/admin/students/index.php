@@ -7,6 +7,8 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
     header("Location:../../index.php");
     exit;
 }
+
+
 $sql = "SELECT * FROM users 
 WHERE role='student' ORDER BY id DESC";
 $result = mysqli_query($conn, $sql);

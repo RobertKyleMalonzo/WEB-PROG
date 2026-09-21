@@ -74,7 +74,7 @@ if(isset($_POST["save"])){
                             Student Number
                         </label>
 
-                        <input class="form-control" name = "student_no">
+                        <input class="form-control" name = "student_no" required>
                     </div>
 
                     <!-- Full Name -->
@@ -83,7 +83,7 @@ if(isset($_POST["save"])){
                             Full Name
                         </label>
 
-                        <input class="form-control" name = "full_name">
+                        <input class="form-control" name = "full_name" required>
                     </div>
 
                     <!-- Username -->
@@ -92,7 +92,7 @@ if(isset($_POST["save"])){
                             Username
                         </label>
 
-                        <input class="form-control" name = "username">
+                        <input class="form-control" name = "username" required>
                     </div>
 
                     <!-- Password -->
@@ -105,6 +105,7 @@ if(isset($_POST["save"])){
                             type="password"
                             class="form-control"
                             name = "password"
+                            required
                         >
                     </div>
 
@@ -118,7 +119,7 @@ if(isset($_POST["save"])){
                     </button>
 
                     <a
-                        href="students.html"
+                        href="index.php"
                         class="btn btn-secondary"
                     >
                         Cancel
