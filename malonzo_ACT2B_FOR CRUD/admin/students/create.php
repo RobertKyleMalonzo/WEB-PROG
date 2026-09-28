@@ -17,7 +17,7 @@ if(isset($_POST["save"])){
     $password = password_hash ($_POST["password"], PASSWORD_DEFAULT);
     //INSERT RECORD SQL
     $sql = "INSERT INTO users (student_no, full_name, username, password, role)
-    VALUES ('$stusent_no', '$full_name', '$username', '$password', 'student')";
+    VALUES ('$student_no', '$full_name', '$username', '$password', 'student')";
     
     if(mysqli_query($conn, $sql)){
        header("Location: index.php?message=Student Added Successfully");

@@ -48,7 +48,7 @@
         <a
             href="students.html"
             class="btn btn-secondary btn-sm mb-3"
-        >
+        >]\]
             ← Back
         </a>
 
